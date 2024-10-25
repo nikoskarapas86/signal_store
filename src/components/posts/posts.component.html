@@ -1,0 +1,11 @@
+<form [formGroup]="addForm" (ngSubmit)="onAdd()">
+  <input type="text" placeholder="add" formControlName="title" />
+
+
+</form>
+<div>Totel posts : {{store.postsCount()}}</div>
+<div *ngIf="store.isLoading()">isLoadding...</div>
+<div *ngIf="store.error()">error...</div>
+<div *ngFor=" let post of store.posts()">
+  {{post.title}} <span (click)="store.removePost(post)">X</span>
+</div>
