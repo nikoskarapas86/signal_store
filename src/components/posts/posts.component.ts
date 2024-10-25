@@ -33,37 +33,6 @@ export class PostsComponent {
     title: '',
   });
 
-  // ngOnInit() {
-  //   this.postService
-  //     .getPosts()
-  //     .pipe(tap((psts) => this.store.addPosts(psts)))
-  //     .subscribe();
-  // }
-  // with state and above I converted it to SIGNALSTORE
-  // state = signalState<PostStateInterface>({
-  //   posts: [],
-  //   error: null,
-  //   isLoading: false,
-  // });
-
-  // onAdd() {
-  //   const newPost = {
-  //     id: (Math.random() * 100).toString(),
-  //     title: this.addForm.getRawValue().title,
-  //   };
-  //   const upDatedPosts = [...this.store.posts(), newPost];
-  //   patchState(this.store, (state) => ({ ...state, posts: upDatedPosts }));
-  //   this.addForm.reset();
-  // }
-
-  // removePost(post: PostInteface) {
-  //   const updatedPosts = this.store
-  //     .posts()
-  //     .filter((postItem) => postItem.id !== post.id);
-
-  //   patchState(this.store, (state) => ({ ...state, posts: updatedPosts }));
-  // }
-
   onAdd() {
     const title = this.addForm.getRawValue().title;
     this.store.onAddPost(title);
